@@ -89,4 +89,31 @@ public class EarthQuakeClient {
         }
     }
     
+    public ArrayList<QuakeEntry> filterByDepth(ArrayList<QuakeEntry> quakeData,
+                                                double minDepth, double maxDepth){
+        ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
+        
+        for (QuakeEntry qe : quakeData){
+            if(qe.getDepth() > minDepth && qe.getDepth() < maxDepth){
+                answer.add(qe);
+            }
+        }
+        return answer;
+    }
+    
+    public void quakesOfDepth() {
+        EarthQuakeParser parser = new EarthQuakeParser();
+        String source = "data/nov20quakedatasmall.atom";
+        ArrayList<QuakeEntry> list = parser.read(source);
+        ArrayList<QuakeEntry> quakeDepthData = filterByDepth(list, -10000.0, -5000.0);
+        
+        System.out.println("read data for " + list.size() + " quakes");
+        
+        for(QuakeEntry qe : quakeDepthData){
+            System.out.println(qe);
+        }
+        
+        System.out.println("Found " + quakeDepthData.size() + " quakes that match that criteria");
+    }
+    
 }
