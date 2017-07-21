@@ -46,10 +46,10 @@ public class EarthQuakeClient {
         ArrayList<QuakeEntry> list  = parser.read(source);
         ArrayList<QuakeEntry> bigQuakeList = filterByMagnitude(list, magMin);
         for(QuakeEntry qe : bigQuakeList){
-            System.out.println(bigQuakeList);
+            System.out.println(qe);
         }
         System.out.println("read data for "+list.size()+" quakes");
-
+        System.out.println("Found " + bigQuakeList.size() + " that match that criteria");
     }
 
     public void closeToMe(){
