@@ -115,5 +115,60 @@ public class EarthQuakeClient {
         
         System.out.println("Found " + quakeDepthData.size() + " quakes that match that criteria");
     }
+
+    public ArrayList<QuakeEntry> filterByPhrase(ArrayList<QuakeEntry>quakeData,
+                               String position, String phrase){
+           
+        ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
+        for (QuakeEntry qe : quakeData){
+            String info = qe.getInfo();
+            
+            switch(position){
+                case "start":
+                    if(info.startsWith(phrase)){
+                        answer.add(qe);
+                    }
+                    break;
+                case "end":
+                    if(info.endsWith(phrase)){
+                        answer.add(qe);
+                    }
+                    break;
+                case "any":
+                    if(info.contains(phrase)){
+                        answer.add(qe);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        return answer;
+    }
+    
+    public void quakesByPhrase(){
+        EarthQuakeParser parser = new EarthQuakeParser();
+        String source = "data/nov20quakedatasmall.atom";
+        ArrayList<QuakeEntry> list = parser.read(source);
+        ArrayList<QuakeEntry> quakePh1 = filterByPhrase(list, "end", "California");
+        ArrayList<QuakeEntry> quakePh2 = filterByPhrase(list, "any", "Can");
+        ArrayList<QuakeEntry> quakePh3 = filterByPhrase(list, "start", "Explosion");
+        
+        for(QuakeEntry qe : quakePh1){
+            System.out.println(qe);
+        }
+        System.out.println("Found " + quakePh1.size() + " quakes that match Californina at end");
+        System.out.println("");
+        for(QuakeEntry qe : quakePh2){
+            System.out.println(qe);
+        }
+        System.out.println("Found " + quakePh2.size() + " quakes that match Can at any");
+        System.out.println("");
+        for(QuakeEntry qe : quakePh3){
+            System.out.println(qe);
+        }
+        System.out.println("Found " + quakePh3.size() + " quakes that match Explosion at start");
+        System.out.println("");
+    }
     
 }
