@@ -1,4 +1,4 @@
-package earthQuakeCityMap;
+package earthQuakeMap;
 
 //Java utilities libraries
 import java.util.ArrayList;
