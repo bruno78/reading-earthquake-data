@@ -210,7 +210,7 @@ public class EarthquakeMap extends PApplet {
 		
 		System.out.println("");
 		System.out.println("Earthquakes in land: " + quakesByLand);
-		System.out.println("Earthquakes in the ocean: " + quakesByOcean);
+		System.out.println("Earthquakes in ocean: " + quakesByOcean);
 		
 	}
 	
