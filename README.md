@@ -13,7 +13,7 @@ It uses:
 ## Brief description of packages
 
 * **earthquakeMap**
-  Contains the class EarthQuakeMap used to display earthquake data related to the location. It also prints to the console the number of earthquakes by country and the total number of earthquakes in land and earthquakes in the ocean
+  Contains the class EarthQuakeMap used to display earthquake data related to the location. It also prints to the console the number of earthquakes by country and the total number of earthquakes in land and earthquakes in the ocean.
   <div><img src="https://cdn.rawgit.com/bruno78/reading-earthquake-data/da545a82/data/total-num-earthquakes.png" alt="display of total number of earthquakes"/></div>
 * **filter**
   Contains several filters methods provided by an interface Filter to filter data for analysis.
