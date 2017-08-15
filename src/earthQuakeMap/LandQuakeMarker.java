@@ -18,7 +18,11 @@ public class LandQuakeMarker extends EarthquakeMarker {
 
 	@Override
 	public void drawEarthquake(PGraphics pg, float x, float y) {
-
+		
+		//float size = (float)((double)getRadius()*0.75);
+		float size = (float)((double)getMagnitude()*1.2);
+		pg.ellipse(x,y,size*2,size*2);
+	    /*	
 		if(super.getMagnitude() <= 4){
 			pg.ellipse(x, y, 5, 5);
 		}
@@ -28,6 +32,8 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		else {
 			pg.ellipse(x,  y, 15, 15);
 		}
+		*/
+		
 	}
 	
 	// Get the country the earthquake is in
