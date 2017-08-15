@@ -1,6 +1,6 @@
 # Reading Live Earthquake data
 
-<div style="text-align:center"><img src="https://cdn.rawgit.com/bruno78/reading-earthquake-data/6818af0c/data/earthquakemap.png" alt="Earthquakes by Magnitude"/></div>
+<div style="text-align:center"><img src="https://cdn.rawgit.com/bruno78/reading-earthquake-data/06df4cb8/data/earthquakemap.png" alt="Earthquakes by Magnitude"/></div>
 
 This program reads Earthquake data either from a file or live from the government website: http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom. It displays a map showing magnitude and its intensity in different locations around the globe.
 It uses:
